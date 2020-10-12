@@ -44,4 +44,4 @@ class UserInput extends Component {
   }
 }
 
-export default connect()(UserInput);
+export default connect(this.props.dispatch())(UserInput);

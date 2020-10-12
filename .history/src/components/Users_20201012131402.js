@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 // add any needed imports here
 import {connect} from 'react-redux';
 class Users extends Component {
+  state = {
+    users: []
+  }
 
   
 
@@ -10,10 +13,9 @@ class Users extends Component {
       <div>
         <ul>
           Users!
+          {this.state.users.map(user=>{return(<li>{user.username} is from {user.hometown}</li>)})}
           {/* Write code here that displays the usernames of all users in the Redux store */}
           {/* In addition, display the total number of users curently in the store */}
-          {this.props.users.map(user=>(<li>{user.username}</li>))}
-          <p>{this.props.users.length}</p>
         </ul>
       </div>
     )
@@ -22,6 +24,7 @@ class Users extends Component {
 
 //add mapStateToProps here
 const mapStateToProps = (state) => {
+  // debugger;
   return {
     users: state.users
   }
