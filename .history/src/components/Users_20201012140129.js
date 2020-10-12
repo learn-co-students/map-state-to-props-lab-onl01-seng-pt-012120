@@ -12,7 +12,7 @@ class Users extends Component {
           Users!
           {/* Write code here that displays the usernames of all users in the Redux store */}
           {/* In addition, display the total number of users curently in the store */}
-          {this.props.users.map(user=>(<li>{user.username}</li>))}
+          {this.props.users.map(user=>{return <li>{user}</li>}).join("")}
           <p>{this.props.users.length}</p>
         </ul>
       </div>
